@@ -18,11 +18,37 @@ var topTenImages = [
 var userCoinChoice = [];
 
 //loop to create images and append to page
-
 for (var i = 0; i <= topCoins.length; i++) {
 
     var newSpan = $("<span>").html(topTenImages[i]);
     newSpan.attr("data-name", topCoins[i]);
+    newSpan.addClass("cryptoIcon m-2");
     $("#icons").append(newSpan);
 
 };
+
+//function to show appropriate crypto graph upon click of crpyto icons
+/*
+$(".cryptoIcon").on("click", function(){
+    var search = $(this).attr("data-name");
+
+    //var queryUrl = ***"API GOES HERE" + search + "REST OF API GOES HERE"***
+
+    $.ajax({
+        url: queryUrl,
+        method: "GET"
+
+    }).then(function(response){
+        console.log(response);
+
+        var results = response.data;
+
+        ***div and display graph**
+
+    });
+});
+*/
+
+$(".cryptoIcon").on("click", function(){
+    alert("yes!");
+})
