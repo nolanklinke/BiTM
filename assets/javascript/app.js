@@ -30,21 +30,36 @@ for (var i = 0; i < topCoins.length; i++) {
 //places border around selection and pushes to array
 // no duplicates allowed
 
-$(".cryptoIcon").on("click", function (){
+$(".cryptoIcon").on("click", function () {
 
-    $(this).addClass("border border-success");
+    
 
     var userChoice = $(this).attr("data-name");
 
-    if (userCoinChoice.indexOf(userChoice) === -1) userCoinChoice.push(userChoice);
+    var index = userCoinChoice.indexOf(userChoice);
+    
+//if (index !== -1) array.splice(index, 1);   
+
+    if (index === -1) {
+        $(this).addClass("border border-success");
+
+        userCoinChoice.push(userChoice);
+
+    } else if (index !== -1) {
+        $(this).removeClass("border border-success");
+
+        userCoinChoice.splice(index, 1);
+    }
 
     console.log(userCoinChoice);
-});
+
+    });
+
 
 $("#btnGo").on("click", function () {
 
     $("#graphs").text(userCoinChoice);
-    
+
 })
 
 
