@@ -18,18 +18,40 @@ var topTenImages = [
 var userCoinChoice = [];
 
 //loop to create images and append to page
-for (var i = 0; i <= topCoins.length; i++) {
+for (var i = 0; i < topCoins.length; i++) {
 
-    var newSpan = $("<span>").html(topTenImages[i]);
-    newSpan.attr("data-name", topCoins[i]);
-    newSpan.addClass("cryptoIcon m-2");
-    $("#icons").append(newSpan);
+    var newDiv = $("<div>").html(topTenImages[i] + topCoins[i]);
+    newDiv.attr("data-name", topCoins[i]);
+    newDiv.addClass("d-inline cryptoIcon m-2");
+    $("#icons").append(newDiv);
 
 };
 
-//function to show appropriate crypto graph upon click of crpyto icons
+//places border around selection and pushes to array
+// no duplicates allowed
+
+$(".cryptoIcon").on("click", function (){
+
+    $(this).addClass("border border-success");
+
+    var userChoice = $(this).attr("data-name");
+
+    if (userCoinChoice.indexOf(userChoice) === -1) userCoinChoice.push(userChoice);
+
+    console.log(userCoinChoice);
+});
+
+$("#btnGo").on("click", function () {
+
+    $("#graphs").text(userCoinChoice);
+    
+})
+
+
+
+//function to show appropriate crypto graph upon selection of crpyto icons
 /*
-$(".cryptoIcon").on("click", function(){
+$("#btnGo").on("click", function (){
     var search = $(this).attr("data-name");
 
     //var queryUrl = ***"API GOES HERE" + search + "REST OF API GOES HERE"***
@@ -43,12 +65,9 @@ $(".cryptoIcon").on("click", function(){
 
         var results = response.data;
 
-        ***div and display graph**
+        var graphDiv = $("<div>")
 
     });
 });
 */
 
-$(".cryptoIcon").on("click", function(){
-    alert("yes!");
-})
