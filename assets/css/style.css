@@ -1,0 +1,12 @@
+#map {
+    height: 400px;
+    width: 100%; 
+}
+
+.map-container {
+    margin: 0 auto;
+}
+
+h4 {
+    text-align: center;
+}
