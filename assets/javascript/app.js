@@ -1,5 +1,7 @@
-//array of top 10 marker caps
+//arrays of top coins and symbols for widget
 var topCoins = ["bitcoin", "litecoin", "etherium", "bitcoin cash", "xrp", "stellar", "tether", "iota", "cardano"];
+var topCoinsSym = ["COINBASE:BTCUSD", "KRAKEN:LTCUSD", "KRAKEN:ETHUSD", "KRAKEN:BCHUSD", "KRAKEN:XRPUSD", "KRAKEN:XLMUSD", "KRAKEN:USDTUSD", "BINANCE:IOTABTC", "BITTREX:ADABTC"]
+
 //images/icons of topTenCoins
 var topTenImages = [
     '<img src="assets/images/btc.svg">',
@@ -22,6 +24,7 @@ for (var i = 0; i < topCoins.length; i++) {
 
     var newDiv = $("<div>").html(topTenImages[i] + topCoins[i]);
     newDiv.attr("data-name", topCoins[i]);
+    newDiv.attr("data-sym", topCoinsSym[i]);
     newDiv.addClass("d-inline cryptoIcon m-2");
     $("#icons").append(newDiv);
 
