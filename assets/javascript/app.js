@@ -102,11 +102,11 @@ $("#btnGo").on("click", function (){
         //ajax call for ATM location data. Not working right yet.
         $.ajax({
             url: queryURL,
-            method: GET, // look into this.. getting an error "is not defined"
+            method: "GET", // GET needed to be in "";
     
         }).then(function(response) {     // When the API is called, run this function...
             console.log("URL " + queryURL);
-            console.log("returned " +response);
+            console.log("returned " + response);
             
             // put the JSON result of objects into a variable
             var results = response.data;
