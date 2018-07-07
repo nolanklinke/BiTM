@@ -57,6 +57,52 @@
     </div>
 </div>
 
+<!-- TradingView Widget BEGIN -->
+<div class="container-fluid">
+    <div class="row text-center">
+
+            <div>
+                <div class="tradingview-widget-container">
+                    <div id="tv-medium-widget"></div>
+                    <div class="tradingview-widget-copyright"></a> by TradingView</div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                    <script type="text/javascript">
+                    new TradingView.MediumWidget(
+                    {
+                    "container_id": "tv-medium-widget",
+                    "symbols": [
+                      [
+                        "Bitcoin",
+                        "COINBASE:BTCUSD"
+                      ],
+                      [
+                        "Litecoin",
+                        "KRAKEN:LTCUSD  "
+                      ],
+                      [
+                        "Etherium",
+                        "KRAKEN:ETHUSD"
+                      ]
+                    ],
+                    "greyText": "Quotes by",
+                    "gridLineColor": "#e9e9ea",
+                    "fontColor": "#83888D",
+                    "underLineColor": "#dbeffb",
+                    "trendLineColor": "#4bafe9",
+                    "width": "1000px",
+                    "height": "400px",
+                    "locale": "en"
+                  }
+                    );
+                    </script>
+                  </div>
+            </div>
+
+    </div>
+</div>
+  <!-- TradingView Widget END -->
+
+
 <!-- Adding a container to hold the map -->
 <div class="container map-container">
     <h4>Nearby Crypto ATMs</h4>
