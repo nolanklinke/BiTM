@@ -122,7 +122,6 @@ function initAutocomplete() {
       if (places.length == 0) {
         return;
       }
-
       // Clear out the old markers.
       markers.forEach(function(marker) {
         marker.setMap(null);
