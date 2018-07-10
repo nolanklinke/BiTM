@@ -1,23 +1,16 @@
+$("#show-graphs").hide();
+
 //does not show widget until button is clicked
 $("#btnGo").on("click", function () {
-});
+
+  $("#show-graphs").show();
+
 
 new TradingView.MediumWidget(
     {
     "container_id": "tv-medium-widget",
     "symbols": [
-      [
-        "Apple",
-        "AAPL "
-      ],
-      [
-        "Google",
-        "GOOGL"
-      ],
-      [
-        "Microsoft",
-        "MSFT"
-      ]  
+      [userCoinChoice]  
     ],
     "greyText": "Quotes by",
     "gridLineColor": "#e9e9ea",
@@ -29,12 +22,22 @@ new TradingView.MediumWidget(
     "locale": "en"
   }
     );
-
+  });
   
 
 //arrays of top coins and symbols for widget
-var topCoins = ["Bitcoin", "Litecoin", "Etherium", "Bitcoin Cash", "Xrp", "Stellar", "Tether", "Iota", "Cardano"];
-var topCoinsSym = ["COINBASE:BTCUSD", "KRAKEN:LTCUSD", "KRAKEN:ETHUSD", "KRAKEN:BCHUSD", "KRAKEN:XRPUSD", "KRAKEN:XLMUSD", "KRAKEN:USDTUSD", "BINANCE:IOTABTC", "BITTREX:ADABTC"];
+var topCoinsName = ["Bitcoin", "Litecoin", "Etherium", "Bitcoin Cash", "Xrp", "Stellar", "Tether", "Iota", "Cardano"];
+var topCoinsSym = 
+["COINBASE:BTCUSD",
+"KRAKEN:LTCUSD", 
+"KRAKEN:ETHUSD",
+"KRAKEN:BCHUSD",
+"KRAKEN:XRPUSD",
+"KRAKEN:XLMUSD",
+"KRAKEN:USDTUSD",
+"BINANCE:IOTABTC", 
+"BITTREX:ADABTC"];
+
 
 //images/icons of topTenCoins
 var topTenImages = [
@@ -53,10 +56,10 @@ var topTenImages = [
 var userCoinChoice = [];
 
 //loop to create images and append to page
-for (var i = 0; i < topCoins.length; i++) {
+for (var i = 0; i < topCoinsName.length; i++) {
 
-  var newDiv = $("<div>").html(topTenImages[i] + topCoins[i]);
-  newDiv.attr("data-name", topCoins[i]);
+  var newDiv = $("<div>").html(topTenImages[i] + topCoinsName[i]);
+  newDiv.attr("data-name", topCoinsSym[i]);
   newDiv.addClass("d-inline cryptoIcon m-2");
   $("#icons").append(newDiv);
 
