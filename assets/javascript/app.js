@@ -22,7 +22,7 @@ function initAutocomplete() {
 
         // ajax call for ATM location data
         $.ajax({
-            url: 'https://cors-anywhere.herokuapp.com/' + queryURL,
+            url: 'https://cors-anywhere.herokuapp.com/' + queryURL, //heroku solve FTW
             method: "GET", 
             dataType: 'json',
 
