@@ -15,7 +15,6 @@ function initAutocomplete() {
         });
     }
 
-
 // THIS SECTION CONTAINS TWO DIFFERENT FORMATS OF AJAX CALLS (only one is active)
 // BOTH WORK, BUT NEITHER RESOLVES CORS ISSUE (console: "origin not found in Access-Control-Allow-Origin response header")
 
@@ -23,17 +22,20 @@ function initAutocomplete() {
 
         // ajax call for ATM location data
         $.ajax({
-            url: queryURL,
+            url: 'https://cors-anywhere.herokuapp.com/' + queryURL,
             method: "GET", 
+            dataType: 'json',
 
-        }).then(function(response) {  // When the API is called, run this function...
-            var data = JSON.parse(response); // Parse the results nicely into JSON format
+        }).then(function(data) {  // When the API is called, run this function...
+            // var data = JSON.parse(response); // Parse the results nicely into JSON format
+            
+            console.log(data); // This won't run with dataType and cors set in the ajax call...
 
             for (var i = 0; i < data.length; i++) { // Loop through JSON and create markers at latLng
                 var latLng = new google.maps.LatLng(data[i].lat, data[i].lng);
                 var marker = new google.maps.Marker({
                     position: latLng,
-                    map: map
+                    map: map    
                 });
                 
                 addInfoText(marker, i);
@@ -103,7 +105,8 @@ function initAutocomplete() {
         // xmlhttp.open("GET", "https://www.coinatmfinder.com/CoimATMs-API.php", true);
         // xmlhttp.send();
 
-    
+
+    //THIS IS ALL FOR THE SEARCH BOX ON THE MAP
     // Create the search box input from the API and link it to the UI element.
     var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);
