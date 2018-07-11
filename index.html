@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="assets/css/reset.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -147,9 +148,32 @@
     <!-- Adding a form field that gets pulled into the Google Maps functionality-->
     <div class="form-group row">
         <input class="col-md-6" id="pac-input" class="controls" type="text" placeholder="Search Box">
-        <div id="map"></div>
+        <!-- commented out below line. It caused a massive page break before the widget -->
+        <!-- <div id="map"></div> -->
     </div>
 </div>
+
+
+
+    <!-- CryptoRival News container -->
+    <div class="container news-container ml-center">
+        <h4></h4>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div id="news-container" class="col-md-8"></div>
+            <div class="col-md-2"></div>
+        </div>
+    <!-- Cryptocurrency News Widget -->
+    <script type="text/javascript" src="https://static.cryptorival.com/js/newswidget.js"></script>
+    <a id="cr-copyright" href="https://cryptorival.com/" target="_blank" rel="nofollow">Powered by CryptoRival</a>
+    <script type="text/javascript">
+    showNews('500', true, '0', 'FF9933', 'FF9933', 'FF9933', '777777', '495');
+    </script>
+    </div>
+    <!-- CryptoRival News Widget container -->
+
+
+
     <!--TradingView Link-->
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
     <!-- Link to the Google Maps JS API-->
