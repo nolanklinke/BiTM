@@ -4,7 +4,7 @@
     authDomain: "bitm-1b867.firebaseapp.com",
     databaseURL: "https://bitm-1b867.firebaseio.com",
     projectId: "bitm-1b867",
-    storageBucket: "",
+    storageBucket: "bitm-1b867.appspot.com",
     messagingSenderId: "731402922500"
   };
 
@@ -23,11 +23,15 @@
     userPass = $("#orangeForm-pass").val().trim();
 
     database.ref().push({
-        userName = userName,
-        userEmail = userEmail,
-        userPass = userPass,
+        userName: userName,
+        userEmail: userEmail,
+        userPass: userPass,
         dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
+
+    $("#orangeForm-name").val("");
+    $("#orangeForm-email").val("");
+    $("#orangeForm-pass").val("");
 
 
   });
