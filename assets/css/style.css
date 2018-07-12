@@ -1,12 +1,42 @@
 #map {
-    height: 400px;
+    height: 495px;
     width: 100%; 
 }
 
 .map-container {
     margin: 0 auto;
+
 }
 
 h4 {
     text-align: center;
+}
+
+.cryptoIcon {
+    text-align: center;
+}
+
+.cryptoIcon:hover {
+    transform: scale(1.1, 1.1);
+    transition-duration: .5s;
+}
+
+.cryptoIcon:click {
+    border: 2px solid green;
+}
+
+#tradingView {
+    padding-top:5px;
+    margin-bottom: 30px;
+  
+}
+
+#btnGo {
+    margin-bottom: 20px;
+}
+
+#btnGo:hover {
+    transform: scale(1.1, 1.1);
+    transition-duration: .5s;
+ 
 }
