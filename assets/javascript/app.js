@@ -39,6 +39,7 @@ function initAutocomplete() {
                         '<h6 id="locationInfo" class="firstInfo">' + data[i].location+ '</h6>'+
                         '<h7 id="addressInfo" class = "secondInfo">' + data[i].address + ", " + data[i].city + ", " + data[i].state + " " + data[i].zipcode + '</h7>' +
                         '<br \>' + '<h7 id="currencyInfo" class="thirdInfo">' + "Currencies: " + data[i].currency + '</h7>' +
+                        '<br \>' + '<a class="directionsLink" href="https://www.google.com/maps/dir/?api=1&destination=' + data[i].lat + "," + data[i].lng + '">' + "Get Directions" + '</a>' +
                         '</div>' +
                         '</div>';
             
