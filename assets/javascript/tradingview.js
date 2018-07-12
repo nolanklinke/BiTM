@@ -58,9 +58,9 @@ var userCoinChoice = [];
 //loop to create images and append to page
 for (var i = 0; i < topCoinsName.length; i++) {
 
-  var newDiv = $("<div>").html(topTenImages[i] + topCoinsName[i]);
+  var newDiv = $("<button>").html(topTenImages[i] + topCoinsName[i]);
   newDiv.attr("data-name", topCoinsSym[i]);
-  newDiv.addClass("d-inline cryptoIcon m-2");
+  newDiv.addClass("d-inline cryptoIcon m-1");
   $("#icons").append(newDiv);
 
 };
